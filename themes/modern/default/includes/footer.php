@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Footer template.
  *
@@ -40,8 +40,10 @@ endif;
         <!-- start the .footer.row -->
         <div class="row">
           <div class="col-md-12">
-            <h2><?php echo $this->t('{core:frontpage:about_header}'); ?></h2>
-            <p><?php echo $this->t('{core:frontpage:about_text}'); ?></p>
+              <div class="pull-right">
+					      <span class ="pull-left" style="margin-top: 20px"><a href="https://www.make-munich.de" target="_blank">www.make-munich.de</a></span>
+					      <img src="<?php echo $url_path; ?>/MakeMunich_logo_blue_40x120.png" class="pull-left" style="margin-top: 5px; margin-left:10px; height: 50px" />
+				      </div>    
           </div>
           <div class="col-md-12">
             <p>

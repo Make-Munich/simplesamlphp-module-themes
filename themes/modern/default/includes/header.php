@@ -98,14 +98,14 @@ endif;
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">SAML</a>
+            <a class="navbar-brand" href="#">Make-Munich SSO</a>
           </div>
           <div class="collapse navbar-collapse" id="header-navigation">
             <ul class="nav navbar-nav">
               <li role="presentation"><a href="/">Home</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <?php echo simplesamlphp_get_authentication_nav($this); ?>
+              <!-- <?php echo simplesamlphp_get_authentication_nav($this); ?> -->
               <li role="presentation" class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                   Language <span class="caret"></span>
