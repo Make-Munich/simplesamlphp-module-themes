@@ -40,17 +40,17 @@ endif;
         <!-- start the .footer.row -->
         <div class="row">
           <div class="col-md-12">
+              <span class="pull-left" style="margin-top: 20px; margin-right: 5px">
+                Theme by <a href="http://corycollier.com/">Cory Collier</a>, and can be found at
+                <a href="https://github.com/corycollier/simplesamlphp-module-themes">
+                <i class="fa fa-github"></i> https://github.com/corycollier/simplesamlphp-module-themes</a>
+				      </span>
               <div class="pull-right">
 					      <span class ="pull-left" style="margin-top: 20px"><a href="https://www.make-munich.de" target="_blank">www.make-munich.de</a></span>
 					      <img src="<?php echo $url_path; ?>/MakeMunich_logo_blue_40x120.png" class="pull-left" style="margin-top: 5px; margin-left:10px; height: 50px" />
 				      </div>    
           </div>
           <div class="col-md-12">
-            <p>
-              Theme by <a href="http://corycollier.com/">Cory Collier</a>, and can be found at
-              <a href="https://github.com/corycollier/simplesamlphp-module-themes">
-              <i class="fa fa-github"></i> https://github.com/corycollier/simplesamlphp-module-themes</a>
-            </p>
           </div>
         </div>
       </div>
