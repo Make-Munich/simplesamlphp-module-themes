@@ -98,13 +98,12 @@ endif;
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Make-Munich SSO</a>
+            <a class="navbar-brand" href="#">Make Munich Participants</a>
           </div>
           <div class="collapse navbar-collapse" id="header-navigation">
             <ul class="nav navbar-nav">
-              <li role="presentation"><a href="/">Home</a></li>
               <li role="presentation"><a href="/module.php/selfregister/">Account</a></li>
-              <li role="presentation"><a href="https://projects.make-munich.de">Projects</a></li>
+              <li role="presentation"><a href="https://projects.make-munich.de">My Make Munich Projects</a></li>
             </ul>
             <!-- <ul class="nav navbar-nav navbar-right">
               <?php echo simplesamlphp_get_authentication_nav($this); ?>
