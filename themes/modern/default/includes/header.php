@@ -100,27 +100,7 @@ endif;
             </button>
             <a class="navbar-brand" href="#">Make Munich Participants</a>
           </div>
-          <div class="collapse navbar-collapse" id="header-navigation">
-            <ul class="nav navbar-nav">
-              <li role="presentation"><a href="/module.php/selfregister/">Account</a></li>
-              <li role="presentation"><a href="https://projects.make-munich.de">My Make Munich Projects</a></li>
-            </ul>
-            <!-- <ul class="nav navbar-nav navbar-right">
-              <?php echo simplesamlphp_get_authentication_nav($this); ?>
-              <li role="presentation" class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                  Language <span class="caret"></span>
-                </a>
-                <?php
-                // render the language selector
-                echo simplesamlphp_get_languagebar($this, array(
-                  'post' => $_POST,
-                  'languageParameterName' => $this->languageParameterName,
-                ));
-                ?>
-              </li>
-            </ul> -->
-          </div>
+          
         </div>
       </nav>
 
