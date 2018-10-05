@@ -93,9 +93,7 @@ endif;
             endforeach;
           endif;
           ?>
-          <div class="row">
-            <div class="page-header col-md-12">
-              <h1 class="mainTitle"><?php echo $title; ?></h1>
+            <div class="page-header">
+              <h2><?php echo $title; ?></h2>
             </div>
-          </div>
           
