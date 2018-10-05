@@ -80,7 +80,7 @@ endif;
 					</div>
 					<div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/module.php/selfregister/reviewUser.php">Login</li>
+              <li><a href="/module.php/selfregister/reviewUser.php">Login</a></li>
 						  <li>
 								<form class="navbar-form navbar-left" action="#" method="post">
 									<select class="selectpicker form-control" data-width="fit" name="language" onchange='this.form.submit()'>
