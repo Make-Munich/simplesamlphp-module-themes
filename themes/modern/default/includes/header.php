@@ -66,7 +66,15 @@ endif;
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="<?php echo $js_path; ?>/bootstrap.min.js"></script>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Condensed%3A400%7CRoboto%3A400&#038;ver=1535976071' type='text/css' media='all' />
-		
+		<script>
+			$(document).ready(function () {
+				$(function(){
+    				$('.selectpicker').selectpicker();
+				});
+				$("[data-toggle=tooltip]").not("ul.nav a").not("label > span").tooltip();
+				$("ul.nav a[data-toggle=tooltip], span[data-toggle=tooltip]").tooltip({ container: "body" });
+			});
+		</script>
 	</head>
 	<body>
 		<div id="wrap">
@@ -80,6 +88,15 @@ endif;
 					<div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
               <li><a href="/module.php/selfregister/reviewUser.php">Login</a></li>
+              <li>
+								<form class="navbar-form navbar-left">
+									<select class="selectpicker form-control" data-width="fit" name="language" onchange='this.form.submit()'>
+                    <option data-content='<span class="flag-icon flag-icon-de"></span> Deutsch' value="de">de</option>
+                    <option data-content='<span class="flag-icon flag-icon-gb"></span> English' value="en">en</option>
+									</select>
+									<noscript><input type="submit" value="Go" class="btn btn-default"></noscript>
+								</form>
+							</li>
 						</ul>
 					</div>
 				</div>
