@@ -30,21 +30,18 @@ function simplesamlphp_get_languagebar(SimpleSAML_XHTML_Template $view, $params 
   }
 
   $languages = simplesamlphp_get_languages();
-  //$result    = '<ul class="dropdown-menu">';
-  //$template  = '<li><a href="!href">!name</a></li>';
-  $template  = "<option data-content='<span class=\"flag-icon flag-icon-!lang\"></span> !name' value=\"!lang\">!name</option>";
+  $result    = '<ul class="dropdown-menu">';
+  $template  = '<li><a href="!href">!name</a></li>';
   foreach ($languages as $lang => $name) {
     $href = \SimpleSAML\Utils\HTTP::addURLParameters(\SimpleSAML\Utils\HTTP::getSelfURL(), array(
       $params['languageParameterName'] => $lang
     ));
-    $result = strtr($template, array(
+    $result .= strtr($template, array(
       '!href' => $href,
-      '!name' => $name,
-      '!lang' => $lang
+      '!name' => $name
     ));
   }
-  //return $result . '</ul>';
-  return $result
+  return $result . '</ul>';
 }
 
 /**
