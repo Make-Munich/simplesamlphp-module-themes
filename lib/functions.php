@@ -30,18 +30,21 @@ function simplesamlphp_get_languagebar(SimpleSAML_XHTML_Template $view, $params 
   }
 
   $languages = simplesamlphp_get_languages();
-  $result    = '<ul class="dropdown-menu">';
-  $template  = '<li><a href="!href">!name</a></li>';
+  //$result    = '<ul class="dropdown-menu">';
+  //$template  = '<li><a href="!href">!name</a></li>';
+  $template  = '<option data-content='<span class="flag-icon flag-icon-!lang"></span> !name' value="!lang">!name</option>';
   foreach ($languages as $lang => $name) {
     $href = \SimpleSAML\Utils\HTTP::addURLParameters(\SimpleSAML\Utils\HTTP::getSelfURL(), array(
       $params['languageParameterName'] => $lang
     ));
-    $result .= strtr($template, array(
+    $result = strtr($template, array(
       '!href' => $href,
-      '!name' => $name
+      '!name' => $name,
+      '!lang' => $lang
     ));
   }
-  return $result . '</ul>';
+  //return $result . '</ul>';
+  return $result
 }
 
 /**
@@ -51,44 +54,8 @@ function simplesamlphp_get_languagebar(SimpleSAML_XHTML_Template $view, $params 
  */
 function simplesamlphp_get_languages() {
   return array(
-    'no'    => 'Bokmål', // Norwegian Bokmål
-    'nn'    => 'Nynorsk', // Norwegian Nynorsk
-    'se'    => 'Sámegiella', // Northern Sami
-    'sam'   => 'Åarjelh-saemien giele', // Southern Sami
-    'da'    => 'Dansk', // Danish
     'en'    => 'English',
     'de'    => 'Deutsch', // German
-    'sv'    => 'Svenska', // Swedish
-    'fi'    => 'Suomeksi', // Finnish
-    'es'    => 'Español', // Spanish
-    'fr'    => 'Français', // French
-    'it'    => 'Italiano', // Italian
-    'nl'    => 'Nederlands', // Dutch
-    'lb'    => 'Lëtzebuergesch', // Luxembourgish
-    'cs'    => 'Čeština', // Czech
-    'sl'    => 'Slovenščina', // Slovensk
-    'lt'    => 'Lietuvių kalba', // Lithuanian
-    'hr'    => 'Hrvatski', // Croatian
-    'hu'    => 'Magyar', // Hungarian
-    'pl'    => 'Język polski', // Polish
-    'pt'    => 'Português', // Portuguese
-    'pt-br' => 'Português brasileiro', // Portuguese
-    'ru'    => 'русский язык', // Russian
-    'et'    => 'eesti keel', // Estonian
-    'tr'    => 'Türkçe', // Turkish
-    'el'    => 'ελληνικά', // Greek
-    'ja'    => '日本語', // Japanese
-    'zh'    => '简体中文', // Chinese (simplified)
-    'zh-tw' => '繁體中文', // Chinese (traditional)
-    'ar'    => 'العربية', // Arabic
-    'fa'    => 'پارسی', // Persian
-    'ur'    => 'اردو', // Urdu
-    'he'    => 'עִבְרִית', // Hebrew
-    'id'    => 'Bahasa Indonesia', // Indonesian
-    'sr'    => 'Srpski', // Serbian
-    'lv'    => 'Latviešu', // Latvian
-    'ro'    => 'Românește', // Romanian
-    'eu'    => 'Euskara', // Basque
   );
 }
 
