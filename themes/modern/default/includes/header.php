@@ -1,18 +1,4 @@
 <?php
-/**
- * Header template.
- *
- * The main header template. This is used throughout the application.
- *
- * @author     Cory Collier <corycollier@corycollier.com>
- * @license    http://opensource.org/licenses/MIT  MIT License
- * @version    git: $Id$
- * @link       https://github.com/corycollier/simplesamlphp-module-themes
- * @see        https://github.com/simplesamlphp/simplesamlphp/
- * @since      File available since Release 1.3.0
- */
-?>
-<?php
 $dir = SimpleSAML_Module::getModuleDir('themes');
 require $dir . '/lib/functions.php';
 
@@ -50,18 +36,16 @@ if (array_key_exists('pageid', $this->data)) :
 endif;
 ?>
 
-<!doctype html>
+<!DOCTYPE HTML>
 <html class="" lang="<?php echo $language; ?>">
-  <head>
-    <meta charset="utf-8">
+	<head>
+		<title><?php echo $title; ?></title>
+    <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><?php echo $title; ?></title>
     <meta name="description" content="SAML Configuration">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
-
     <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/bootstrap-theme.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/font-awesome.css" />
@@ -71,37 +55,46 @@ endif;
     <!--[if IE]>
       <link href="<?php echo $css_path; ?>/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
-<?php
-  if(!empty($this->data['htmlinject']['htmlContentHead'])) :
-    foreach($this->data['htmlinject']['htmlContentHead'] as $content) :
-      echo $content;
-    endforeach;
-  endif;
-?>
-  </head>
-  <body>
+    <?php
+      if(!empty($this->data['htmlinject']['htmlContentHead'])) :
+        foreach($this->data['htmlinject']['htmlContentHead'] as $content) :
+          echo $content;
+        endforeach;
+      endif;
+    ?>
 
-    <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser.
-        Please <a href="http://browsehappy.com/">upgrade your browser</a> to
-        improve your experience.</p>
-    <![endif]-->
-
-    <!-- start .header -->
-    <div class="header">
-      <nav class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navigation" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Make Munich Participants</a>
-          </div>
-          
-        </div>
+    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/cfp.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/lang/bootstrap-select.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/lang/flag-icon.min.css" />
+    <script type="text/javascript" src="<?php echo $css_path; ?>/lang/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="<?php echo $js_path; ?>/jquery.js"></script>
+    <script type="text/javascript" src="<?php echo $js_path; ?>/bootstrap.js"></script>
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Condensed%3A400%7CRoboto%3A400&#038;ver=1535976071' type='text/css' media='all' />
+		
+	</head>
+	<body>
+		<div id="wrap">
+			<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#" style="padding: 12.5px 10px;">
+							<img alt="Brand" src="<?php echo $url_path; ?>/MakeMunich_logo_white_40x120.png">
+						</a>
+					</div>
+					<div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+						  <li>
+								<form class="navbar-form navbar-left" action="#" method="post">
+									<select class="selectpicker form-control" data-width="fit" name="language" onchange='this.form.submit()'>
+										<option data-content='<span class="flag-icon flag-icon-de"></span> Deutsch' value="de">de</option>
+										<option data-content='<span class="flag-icon flag-icon-gb"></span> English' value="en">en</option>
+									</select>
+									<noscript><input type="submit" value="Go" class="btn btn-default"></noscript>
+								</form>
+							</li>
+						</ul>
+					</div>
+				</div>
       </nav>
 
       <div class="container">
@@ -112,16 +105,13 @@ endif;
         </div>
       </div>
 
-    </div>
-
-    <!-- start the .content -->
-    <div class="content">
-      <div class="container">
-      <?php
-      if(!empty($this->data['htmlinject']['htmlContentPre'])) :
-        foreach($this->data['htmlinject']['htmlContentPre'] as $content) :
-          echo $content;
-        endforeach;
-      endif;
-      ?>
-        <div class="row">
+      <div class="content">
+			  <div class="container" style="padding-bottom: 60px;">
+          <?php
+          if(!empty($this->data['htmlinject']['htmlContentPre'])) :
+            foreach($this->data['htmlinject']['htmlContentPre'] as $content) :
+              echo $content;
+            endforeach;
+          endif;
+          ?>
+            <div class="row">
