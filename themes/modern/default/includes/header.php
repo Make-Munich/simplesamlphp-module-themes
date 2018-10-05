@@ -109,5 +109,13 @@ endif;
             <div class="page-header">
               <h2><?php echo $title; ?></h2>
               <?php print $language; ?>
+              <?php
+                // render the language selector
+                echo simplesamlphp_get_languagebar($this, array(
+                  'post' => $_POST,
+                  'languageParameterName' => $this->languageParameterName,
+                ));
+                ?>
+
             </div>
           
