@@ -37,20 +37,17 @@ endif;
 ?>
 
 <!DOCTYPE HTML>
-<html class="" lang="<?php echo $language; ?>">
+<html>
 	<head>
 		<title><?php echo $title; ?></title>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><?php echo $title; ?></title>
     <meta name="description" content="SAML Configuration">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/bootstrap-min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/bootstrap-theme.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/print.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/screen.css" />
 
     <!--[if IE]>
       <link href="<?php echo $css_path; ?>/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -67,8 +64,8 @@ endif;
     <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/lang/bootstrap-select.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/lang/flag-icon.min.css" />
     <script type="text/javascript" src="<?php echo $css_path; ?>/lang/bootstrap-select.min.js"></script>
-    <script type="text/javascript" src="<?php echo $js_path; ?>/jquery.js"></script>
-    <script type="text/javascript" src="<?php echo $js_path; ?>/bootstrap.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="<?php echo $js_path; ?>/bootstrap-min.js"></script>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Condensed%3A400%7CRoboto%3A400&#038;ver=1535976071' type='text/css' media='all' />
 		
 	</head>
@@ -83,6 +80,7 @@ endif;
 					</div>
 					<div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
+              <li><a href="/module.php/selfregister/reviewUser.php">Login</li>
 						  <li>
 								<form class="navbar-form navbar-left" action="#" method="post">
 									<select class="selectpicker form-control" data-width="fit" name="language" onchange='this.form.submit()'>
