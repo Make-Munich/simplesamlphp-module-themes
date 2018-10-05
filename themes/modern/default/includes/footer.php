@@ -15,9 +15,8 @@ if (!empty($this->data['htmlinject']['htmlContentPost'])) :
 endif;
 ?>
 
-            </div>
-        </div>
-		</div>
+          </div>
+      </div>
 		<div id="footer" class="navbar-fixed-bottom">
 			<div class="container">
 					<div class="row">

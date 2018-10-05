@@ -97,15 +97,6 @@ endif;
 				</div>
       </nav>
 
-      <div class="container">
-        <div class="row">
-          <div class="page-header col-md-12">
-            <h1 class="mainTitle"><?php echo $title; ?></h1>
-          </div>
-        </div>
-      </div>
-
-      <div class="content">
 			  <div class="container" style="padding-bottom: 60px;">
           <?php
           if(!empty($this->data['htmlinject']['htmlContentPre'])) :
@@ -114,4 +105,9 @@ endif;
             endforeach;
           endif;
           ?>
-            <div class="row">
+          <div class="row">
+            <div class="page-header col-md-12">
+              <h1 class="mainTitle"><?php echo $title; ?></h1>
+            </div>
+          </div>
+          
