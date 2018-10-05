@@ -48,6 +48,8 @@ endif;
     <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/bootstrap-min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/bootstrap-theme.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/print.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/screen.css" />
 
     <!--[if IE]>
       <link href="<?php echo $css_path; ?>/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
