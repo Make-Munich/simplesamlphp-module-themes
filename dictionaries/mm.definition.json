@@ -1,0 +1,11 @@
+{
+  "footer_1": {
+    "en": "Make Munich is the Makerfestival in Munich. Here you can find the <a class=\"footer\" href=\"#\">Imprint</a> and <a class=\"footer\" href=\"#\"> Data privacy statement</a>"
+  },
+  "footer_2": {
+    "en": "Make Munich is using Open Source tools. The Make Munich Participants platform is a fork of <a class=\"footer\" href=\"https://github.com/froscon/SaBoT\" target=\"_blank\">FrOSCon SaBoT</a><a class=\"footer\" href=\"https://www.djangoproject.com/\" target=\"_blank\"><img src=\"https://www.djangoproject.com/m/img/badges/djangomade124x25_grey.gif\" alt=\"Made with Django.\" title=\"Made with Django.\" /></a><a class=\"footer\" href=\"#\">More on our Blog.</a>"
+  },
+  "footer_3": {
+    "en": "<a class=\"footer\" href=\"https://www.make-munich.de\" target=\"_blank\">www.make-munich.de</a>"
+  }
+}
