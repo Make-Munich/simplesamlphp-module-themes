@@ -20,9 +20,9 @@ endif;
 		<div id="footer" class="navbar-fixed-bottom">
 			<div class="container">
 					<div class="row">
-						<div class="col-md-4 footer"><p class="pull-left"><?php echo $this->t('{footer_1}'); ?></p></div>
-						<div class="col-md-4 footer"><p><?php echo $this->t('{footer_2}'); ?></p></div>
-						<div class="col-md-4 footer"><p class="pull-right"><?php echo $this->t('{footer_3}'); ?></p></div>
+						<div class="col-md-4 footer"><p class="pull-left"><?php echo $this->t('{themes:themes:footer_1}'); ?></p></div>
+						<div class="col-md-4 footer"><p><?php echo $this->t('{themes:themes:footer_2}'); ?></p></div>
+						<div class="col-md-4 footer"><p class="pull-right"><?php echo $this->t('{themes:themes:footer_3}'); ?></p></div>
 					</div>
 			</div>
 		</div>
