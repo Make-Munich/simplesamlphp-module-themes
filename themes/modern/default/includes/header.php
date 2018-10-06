@@ -94,14 +94,17 @@ endif;
                       );
                       foreach ($langs as $lang => $name) {
                         if ($lang == $language) {
-                          print "<option data-content='<span class=\"flag-icon flag-icon-$lang\"></span> $name' value=\"$lang\" selected>$name</option>";
+                          if ($lang == 'en') {
+                            $langicon = 'gb';
+                          } else {
+                            $langicon = $lang;
+                          }
+                          print "<option data-content='<span class=\"flag-icon flag-icon-$langicon\"></span> $name' value=\"$lang\" selected>$name</option>";
                         } else {
-                          print "<option data-content='<span class=\"flag-icon flag-icon-$lang\"></span> $name' value=\"$lang\">$name</option>";
+                          print "<option data-content='<span class=\"flag-icon flag-icon-$langicon\"></span> $name' value=\"$lang\">$name</option>";
                         }
                       };
                     ?>
-                    <!-- <option data-content='<span class="flag-icon flag-icon-de"></span> Deutsch' value="de">Deutsch</option>
-                    <option data-content='<span class="flag-icon flag-icon-gb"></span> English' value="en">English</option> -->
 									</select>
 									<noscript><input type="submit" value="Go" class="btn btn-default"></noscript>
 								</form>
