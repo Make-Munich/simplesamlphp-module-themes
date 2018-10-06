@@ -93,12 +93,12 @@ endif;
                         'de'    => 'Deutsch',
                       );
                       foreach ($langs as $lang => $name) {
+                        if ($lang == 'en') {
+                          $langicon = 'gb';
+                        } else {
+                          $langicon = $lang;
+                        }
                         if ($lang == $language) {
-                          if ($lang == 'en') {
-                            $langicon = 'gb';
-                          } else {
-                            $langicon = $lang;
-                          }
                           print "<option data-content='<span class=\"flag-icon flag-icon-$langicon\"></span> $name' value=\"$lang\" selected>$name</option>";
                         } else {
                           print "<option data-content='<span class=\"flag-icon flag-icon-$langicon\"></span> $name' value=\"$lang\">$name</option>";
