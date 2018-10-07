@@ -71,6 +71,10 @@ $errorparams          = $this->data['errorparams'];
       </form>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-6">Link Here</div>
+    <div class="col-md-6">Link Here</div>
+  </div>
 </div>
 
 <?php $this->includeAtTemplateBase('includes/footer.php'); ?>
