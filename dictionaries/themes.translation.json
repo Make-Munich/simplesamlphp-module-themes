@@ -7,5 +7,11 @@
   },
   "footer_3": {
     "de": "<a class=\"footer\" href=\"https://www.make-munich.de\" target=\"_blank\">www.make-munich.de</a>"
-  }
+  },
+  "link_newuser": {
+		"de": "Neues Benutzerkonto registrieren"
+	},
+	"link_lostpw": {
+		"de": "Vergessenes Passwort zur\u00fccksetzen"
+	}
 }
