@@ -107,6 +107,9 @@ endif;
                     ?>
 									</select>
 									<noscript><input type="submit" value="Go" class="btn btn-default"></noscript>
+                  <?php foreach ($this->data['stateparams'] as $name => $value) : ?>
+                  <input type="hidden" name="<?php echo htmlspecialchars($name); ?>" value="<?php echo htmlspecialchars($value); ?>" />
+                  <?php endforeach; ?>  
 								</form>
 							</li>
 						</ul>
@@ -124,9 +127,4 @@ endif;
           ?>
             <div class="page-header">
               <h2><?php echo $title; ?></h2>
-            </div>
-            <?php foreach ($this->data['stateparams'] as $name => $value) : ?>
-          <input type="hidden"
-            name="<?php echo htmlspecialchars($name); ?>"
-            value="<?php echo htmlspecialchars($value); ?>" />
-        <?php endforeach; ?>          
+            </div>        
