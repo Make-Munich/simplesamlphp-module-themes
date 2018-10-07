@@ -90,10 +90,6 @@ $as = new SimpleSAML_Auth_Simple($asId);
             <ul class="nav navbar-nav navbar-right">
               <?php
               if ($this->data['links']['3']['text'] == '{status:logout}') {
-                echo 'Im logged in, Log me out';
-              }
-      
-              if (isset($this->data['username'])) {
 						    echo '<li><a href="' . $as->getLogoutURL(SimpleSAML_Module::getModuleURL('selfregister/index.php')) . '">Logout</a></li>';
               } else {
                 echo '<li><a href="' . SimpleSAML_Module::getModuleURL('selfregister/login.php') . '">Login</a></li>';
@@ -143,6 +139,3 @@ $as = new SimpleSAML_Auth_Simple($asId);
             <div class="page-header">
               <h2><?php echo $title; ?></h2>
             </div>
-            <pre>     
-            <?php print_r($this->data); ?>   
-            </pre>
