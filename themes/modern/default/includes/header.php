@@ -138,5 +138,7 @@ $as = new SimpleSAML_Auth_Simple($asId);
           ?>
             <div class="page-header">
               <h2><?php echo $title; ?></h2>
-            </div>     
+            </div>
+            <pre>     
             <?php print_r($this->data); ?>   
+            </pre>
