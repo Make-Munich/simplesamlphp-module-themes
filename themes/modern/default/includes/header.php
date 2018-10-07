@@ -34,6 +34,11 @@ if (array_key_exists('pageid', $this->data)) :
   SimpleSAML_Module::callHooks('htmlinject', $hookinfo);
 
 endif;
+
+$uregconf = SimpleSAML_Configuration::getConfig('module_selfregister.php');
+$asId = $uregconf->getString('auth');
+$as = new SimpleSAML_Auth_Simple($asId);
+
 ?>
 
 <!DOCTYPE HTML>
@@ -83,7 +88,13 @@ endif;
 					</div>
 					<div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/module.php/selfregister/login.php">Login</a></li>
+              <?php
+              if (isset($this->data['username'])) {
+						    echo '<li><a href="' . $as->getLogoutURL(SimpleSAML_Module::getModuleURL('selfregister/index.php')) . '">Logout</a></li>';
+              } else {
+                echo '<li><a href="' . SimpleSAML_Module::getModuleURL('selfregister/login.php') . '">Login</a></li>';
+              }
+              ?>
               <li>
 								<form class="navbar-form navbar-left">
 									<select class="selectpicker form-control" data-width="fit" name="language" onchange='this.form.submit()'>
