@@ -89,6 +89,10 @@ $as = new SimpleSAML_Auth_Simple($asId);
 					<div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
               <?php
+              if ($this->data['links']['3']['text'] == '{status:logout}') {
+                echo 'Im logged in, Log me out';
+              }
+      
               if (isset($this->data['username'])) {
 						    echo '<li><a href="' . $as->getLogoutURL(SimpleSAML_Module::getModuleURL('selfregister/index.php')) . '">Logout</a></li>';
               } else {
