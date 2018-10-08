@@ -1,6 +1,6 @@
 {
   "footer_1": {
-    "de": "Make Munich ist das Makerfestival in München. Hier findest du das <a class=\"footer\" href=\"#\">Impressum</a> und die kompletten <a class=\"footer\" href=\"#\">Datenschutzhinweise</a>"
+    "de": "Make Munich ist das Makerfestival in München. Hier findest du das <a class=\"footer\" href=\"https://make-munich.de/impressum/\">Impressum</a> und die kompletten <a class=\"footer\" href=\"https://make-munich.de/datenschutz/\">Datenschutzhinweise</a>"
   },
   "footer_2": {
     "de": "Make Munich setzt auf Open Source tools. Die Make Munich Teilnehme Platform basiert auf <a class=\"footer\" href=\"https://github.com/froscon/SaBoT\" target=\"_blank\">FrOSCon SaBoT</a><a class=\"footer\" href=\"https://www.djangoproject.com/\" target=\"_blank\"><img src=\"https://www.djangoproject.com/m/img/badges/djangomade124x25_grey.gif\" alt=\"Made with Django.\" title=\"Made with Django.\" /></a><a class=\"footer\" href=\"#\">Mehr dazu im Blog.</a>"
