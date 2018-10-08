@@ -128,7 +128,7 @@ $as = new SimpleSAML_Auth_Simple($asId);
 				</div>
       </nav>
 
-			  <div class="container" style="padding-bottom: 60px;">
+			  <div class="container" style="padding-bottom: 100px;">
           <?php
           if(!empty($this->data['htmlinject']['htmlContentPre'])) :
             foreach($this->data['htmlinject']['htmlContentPre'] as $content) :
