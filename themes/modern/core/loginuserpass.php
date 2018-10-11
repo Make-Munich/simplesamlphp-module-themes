@@ -71,6 +71,10 @@ $errorparams          = $this->data['errorparams'];
       </form>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-6"><a href="/module.php/selfregister/newUser.php"><?php echo $this->t('{themes:themes:link_newuser}'); ?></a></div>
+    <div class="col-md-6"><a href="/module.php/selfregister/lostPassword.php"><?php echo $this->t('{themes:themes:link_lostpw}'); ?></a></div>
+  </div>
 </div>
 
 <?php $this->includeAtTemplateBase('includes/footer.php'); ?>

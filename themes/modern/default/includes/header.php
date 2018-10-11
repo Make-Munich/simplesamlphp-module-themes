@@ -1,18 +1,4 @@
 <?php
-/**
- * Header template.
- *
- * The main header template. This is used throughout the application.
- *
- * @author     Cory Collier <corycollier@corycollier.com>
- * @license    http://opensource.org/licenses/MIT  MIT License
- * @version    git: $Id$
- * @link       https://github.com/corycollier/simplesamlphp-module-themes
- * @see        https://github.com/simplesamlphp/simplesamlphp/
- * @since      File available since Release 1.3.0
- */
-?>
-<?php
 $dir = SimpleSAML_Module::getModuleDir('themes');
 require $dir . '/lib/functions.php';
 
@@ -48,99 +34,108 @@ if (array_key_exists('pageid', $this->data)) :
   SimpleSAML_Module::callHooks('htmlinject', $hookinfo);
 
 endif;
+
+$uregconf = SimpleSAML_Configuration::getConfig('module_selfregister.php');
+$asId = $uregconf->getString('auth');
+$as = new SimpleSAML_Auth_Simple($asId);
+
 ?>
 
-<!doctype html>
-<html class="" lang="<?php echo $language; ?>">
-  <head>
-    <meta charset="utf-8">
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title><?php echo $title; ?></title>
+    <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><?php echo $title; ?></title>
     <meta name="description" content="SAML Configuration">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
-
-    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/bootstrap-theme.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/print.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/screen.css" />
 
     <!--[if IE]>
       <link href="<?php echo $css_path; ?>/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
-<?php
-  if(!empty($this->data['htmlinject']['htmlContentHead'])) :
-    foreach($this->data['htmlinject']['htmlContentHead'] as $content) :
-      echo $content;
-    endforeach;
-  endif;
-?>
-  </head>
-  <body>
-
-    <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser.
-        Please <a href="http://browsehappy.com/">upgrade your browser</a> to
-        improve your experience.</p>
-    <![endif]-->
-
-    <!-- start .header -->
-    <div class="header">
-      <nav class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navigation" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">SAML</a>
-          </div>
-          <div class="collapse navbar-collapse" id="header-navigation">
-            <ul class="nav navbar-nav">
-              <li role="presentation"><a href="/">Home</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <?php echo simplesamlphp_get_authentication_nav($this); ?>
-              <li role="presentation" class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                  Language <span class="caret"></span>
-                </a>
-                <?php
-                // render the language selector
-                echo simplesamlphp_get_languagebar($this, array(
-                  'post' => $_POST,
-                  'languageParameterName' => $this->languageParameterName,
-                ));
-                ?>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-      <div class="container">
-        <div class="row">
-          <div class="page-header col-md-12">
-            <h1 class="mainTitle"><?php echo $title; ?></h1>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- start the .content -->
-    <div class="content">
-      <div class="container">
-      <?php
-      if(!empty($this->data['htmlinject']['htmlContentPre'])) :
-        foreach($this->data['htmlinject']['htmlContentPre'] as $content) :
+    <?php
+      if(!empty($this->data['htmlinject']['htmlContentHead'])) :
+        foreach($this->data['htmlinject']['htmlContentHead'] as $content) :
           echo $content;
         endforeach;
       endif;
-      ?>
-        <div class="row">
+    ?>
+
+    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/cfp.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/lang/bootstrap-select.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/lang/flag-icon.min.css" />
+    <script type="text/javascript" src="<?php echo $css_path; ?>/lang/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="<?php echo $js_path; ?>/bootstrap.min.js"></script>
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Condensed%3A400%7CRoboto%3A400&#038;ver=1535976071' type='text/css' media='all' />
+		<script>
+			$(function(){
+        $('.selectpicker').selectpicker();
+      });
+		</script>
+	</head>
+	<body>
+		<div id="wrap">
+			<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#" style="padding: 12.5px 10px;">
+							<img alt="Brand" src="<?php echo $url_path; ?>/MakeMunich_logo_white_40x120.png">
+						</a>
+					</div>
+					<div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <?php
+              if ($this->data['links']['3']['text'] == '{status:logout}') {
+						    echo '<li><a href="' . $as->getLogoutURL(SimpleSAML_Module::getModuleURL('selfregister/index.php')) . '">Logout</a></li>';
+              } else {
+                echo '<li><a href="' . SimpleSAML_Module::getModuleURL('selfregister/login.php') . '">Login</a></li>';
+              }
+              ?>
+              <li>
+								<form class="navbar-form navbar-left">
+									<select class="selectpicker form-control" data-width="fit" name="language" onchange='this.form.submit()'>
+                    <?php
+                      $langs = array(
+                        'en'    => 'English',
+                        'de'    => 'Deutsch',
+                      );
+                      foreach ($langs as $lang => $name) {
+                        if ($lang == 'en') {
+                          $langicon = 'gb';
+                        } else {
+                          $langicon = $lang;
+                        }
+                        if ($lang == $language) {
+                          print "<option data-content='<span class=\"flag-icon flag-icon-$langicon\"></span> $name' value=\"$lang\" selected>$name</option>";
+                        } else {
+                          print "<option data-content='<span class=\"flag-icon flag-icon-$langicon\"></span> $name' value=\"$lang\">$name</option>";
+                        }
+                      };
+                    ?>
+									</select>
+									<noscript><input type="submit" value="Go" class="btn btn-default"></noscript>
+                  <?php foreach ($this->data['stateparams'] as $name => $value) : ?>
+                  <input type="hidden" name="<?php echo htmlspecialchars($name); ?>" value="<?php echo htmlspecialchars($value); ?>" />
+                  <?php endforeach; ?>  
+								</form>
+							</li>
+						</ul>
+					</div>
+				</div>
+      </nav>
+
+			  <div class="container" style="padding-bottom: 100px;">
+          <?php
+          if(!empty($this->data['htmlinject']['htmlContentPre'])) :
+            foreach($this->data['htmlinject']['htmlContentPre'] as $content) :
+              echo $content;
+            endforeach;
+          endif;
+          ?>
+            <div class="page-header">
+              <h2><?php echo $title; ?></h2>
+            </div>
